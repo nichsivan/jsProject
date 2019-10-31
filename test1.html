@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   
+</head>
+<body>
+        <script type="text/javascript">
+            //水仙花数
+        var num;
+        while(true){
+        num = prompt();
+        var str = num.toString()
+        var res1 =Number(str.slice(0,1)); //百位   或者用charAt(0)
+        var res2 =Number(str.slice(1,2)); //十位        或者用charAt(1)
+        var res3 =Number(str.slice(2,3)); //个位        或者用charAt(2)
+        var sumcube = Math.pow(res1,3)+Math.pow(res2,3)+Math.pow(res3,3);
+        if(sumcube == num){
+                 console.log("这是一个水仙花数");
+                 window.alert("这是一个水仙花数");
+             }else{
+                console.log("这不是一个水仙花数");
+                window.alert("这不是一个水仙花数");
+             }
+        }
+    </script>
+</body>
+</html>

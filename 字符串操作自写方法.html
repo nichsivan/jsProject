@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>字符串自写方法</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "是谁杀了我而我又杀了谁，是我杀了我";
+        function know(str){
+    var tmp = "";
+    for(var i = str.length - 1;i>=0;i--){
+        tmp += str.charAt(i);
+    }  
+    return tmp;
+}
+
+str = know(str);
+alert(str);
+        </script>
+</body>
+</html>

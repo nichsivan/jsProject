@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html, body{
+      height: 100%;
+    }
+        #imgDIV{
+          position: relative;
+          width: 800px;
+          height: 600px;
+          margin: 0px auto;
+          padding: 0px;
+          background-color: gray;
+          overflow: hidden;
+       }
+       #imgDIV img{
+         position: absolute;
+         width: 100%;
+         margin: 0px;
+       }
+        .button{
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background-color: #FEFEFE;
+          text-align: center;
+          font-size: 20px;
+          line-height: 30px;
+          top: 235px;
+
+        }
+        #left{
+          left: 5px;
+          float: left;
+          z-index: 999;
+        }
+        #right{
+          right: 5px;
+          float: right;
+          z-index: 999;
+        }
+
+    </style>
+      <script type="text/javascript">
+        var max = 8;
+        var cusor = 0;
+        var inter = 5000;
+        var t;
+        function moveLeft(){
+          var old = cusor;
+          if(cusor <= 0){
+            cusor = max-1;
+          }else {
+            cusor --;
+          }
+          var imgs = document.getElementById("imgDIV").getElementsByTagName("img");
+          imgs[cusor].style.visibility = "visible";
+          if(cusor!= old){
+            imgs[old].style.visibility = "hidden";
+          }
+        }
+        function moveRight(){
+          var old = cusor;
+          if(cusor >= max-1){
+            cusor = 0;
+          }else {
+            cusor ++;
+          }
+          var imgs = document.getElementById("imgDIV").getElementsByTagName("img");
+          imgs[cusor].style.visibility = "visible";
+          if(cusor!= old){
+            imgs[old].style.visibility = "hidden";
+          }
+        }
+
+        function autoRun(){
+          // clearTimeout(t);
+          moveRight();
+          t=setTimeout("autoRun()", inter);
+          return;
+        }
+      </script>
+  </head>
+  <body>
+    <div id="imgDIV">
+      <div class="button" id="left" onclick="moveLeft()" onmouseover="clearTimeout(t)" onmouseout="t=setTimeout(autoRun, inter);">
+        &lt;
+      </div>
+      <div class="button" id="right"  onclick="moveRight()" onmouseover="clearTimeout(t)" onmouseout="t=setTimeout(autoRun, inter);">
+        &gt;
+      </div>
+      <img src="img/1.jpg" style="visibility:visible;"/>
+      <img src="img/2.jpg" style="visibility:hidden;"/>
+      <img src="img/3.jpg" style="visibility:hidden;"/>
+      <img src="img/4.jpg" style="visibility:hidden;"/>
+      <img src="img/5.jpg" style="visibility:hidden;"/>
+      <img src="img/6.jpg" style="visibility:hidden;"/>
+      <img src="img/7.jpg" style="visibility:hidden;"/>
+      <img src="img/8.jpg" style="visibility:hidden;"/>
+    </div>
+    <script type="text/javascript">
+      setTimeout("autoRun()", inter);
+    </script>
+  </body>
+</html>

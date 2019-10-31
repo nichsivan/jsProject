@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卧槽无情</title>
+    <style type="text/css">
+    .foot{width: 100%; height: 100  px; border: 1px solid #d2d2d2; text-align: center;}
+    #ABCD{
+            width:240px;
+            height:100px;
+            font-size: 25px;
+            color:rgb(65, 65, 223);
+            background-color:rgb(90, 196, 238);
+            border-color: rgb(167, 120, 214);
+        }
+    .word{
+        text-align: center;
+        margin:0 auto;
+        font-size: 50px;
+        color: rgb(64, 64, 197);
+        /* position:absolute;left:50px;top:250px; */
+    }
+    </style>
+</head> 
+<body>
+    <h1 align="center">数学计算</h1>
+    <div class="foot">
+
+        <button onclick="power()" id="ABCD">幂次方  </button>
+        <button onclick="sum()" id="ABCD">四则运算</button>
+        <button onclick="sort()" id="ABCD">排序</button>
+
+    </div>
+    <div class="word" >
+            <p id = "demo"></p>
+    </div>
+   
+    <script>
+        function power(){
+            var num = prompt("请输入底数：");
+            var p = prompt("请输入幂数：");
+            var x = Math.pow(num,p);
+            window.alert(num+"的"+p+"次方="+x);
+            document.getElementById("demo").innerHTML =num+"的"+p+"次方="+x;
+        }
+        function sum(){
+                var x = prompt("请输入数学表达式：");
+                alert(x+"="+eval(x));
+                document.getElementById("demo").innerHTML =x+"="+ eval(x);
+
+        }
+        function sort(){
+            var arr = [];
+            var len = prompt("输入个数：");
+            for(var i=0;i<len;i++){
+                arr[i]=prompt("第"+(i+1)+"个数：");
+            }
+            arr.sort(function(a, b){return b - a});
+            document.getElementById("demo").innerHTML ="排序为："+ arr;
+        }
+    </script>
+</body>
+</html>
