@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>机票预订</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0}
+		#big{width: 1200px;margin:0 auto;}
+		#nav{width:1200px;height:20px;background-color:white;}
+		#nav1{width: 100px;height: 20px;float: left}
+		#nav2{width: 700px;height: 20px;font-size: 12px;float: left;}
+		#nav3{width: 400px;height: 20px;font-size: 12px;float: left}
+		#biaoti{width: 1200px; }
+		#biaoti p{font-family:华文琥珀; font-size:40px;color: white}
+		#body{width: 1200px}
+		#bian{width: 100px;height: 260px;float: left;background-color: #00CCFF;}
+		#zhong{width: 998px;float: left;}
+		#zhong1{height: 45px;font-size: 18px;color: #3366FF;}
+		#zhong3{float: left;width: 790px;}
+		#zhong4{width: 190px;height:180px;float: left;border:2px #DDDDDD solid;border-radius: 8px;position: relative;			left: 5px;top:10px}
+		#zhong4 ul li{list-style:none;font-family:隶书;}
+		#zhong32{width: 786px;height: 25px;background-color: #33FFFF;float: left;font-size: 15px;position: relative;top: 5px;border:2px #ccc solid}
+		#zhong32 span{font-size: 12px;color: red;}
+		#zhong33{width: 786px;height: 80px;}
+		#zhong33 p{font-size: 12px;position:relative;left: 15px;top: 15px; }
+		#zhong33 span{color: blue;}
+		#zhong33 img{position: relative;left: 10px;top: 10px;bottom:10px}
+		#zhong34{float: left;position: relative;top: 14px;bottom: 8px}
+		#zhong35{float: left;position: relative;left: 30px;top: 12px;border:2px gray dashed;border-radius: 5px;background-color: #ccc}
+		#zhong36{margin: 0 auto;margin-bottom: 10px;width: 700px;height: 190px;border:2px #ccc solid;position: relative;top: 20px;left: 25px;float: left}
+		#zhong361{float: right;}
+		#zhong362{margin: 0 a}
+		#zhong37{float: right;margin-top: 20px;margin-right: 20px;}
+		#zhong38{float: left;margin-top: 20px;margin-left: 35px;padding: 10px;border-bottom: 2px black solid;width: 710px}
+		#zhong39{float: left;margin: 10px 250px 0 250px;width: 250px;padding: 10px}
+		#zhong5{float: left;width: 930px;height: 10margin: 15px 10px 25px 30px;border: 2px #ccc solid;}
+		#zhong51{float: left;width: 170px;margin: 10px;padding: 10px 20px;}
+		#zhong6{margin:0px 300px 20px 300px;float: left;width: 350px;text-align: center;}
+	</style>
+	<script type="text/javascript">
+         function bluree1(){
+            var msg1 = document.getElementById("msg1").value;
+            var patt1=/^[\u4E00-\u9FA5]{2,5}$/gi;
+            var bluree1=patt1.test(msg1);
+            if(bluree1==false){
+                msg11.innerHTML = '输入有误！';
+                document.getElementById("msg11").style.color="red";
+                e1=false;
+            }else if(bluree1==true){
+                msg11.innerHTML = '输入合法！';
+                document.getElementById("msg11").style.color="green";
+                e1=true;
+            }
+            return e1;
+         }
+        function bluree2(){
+            var msg2 = document.getElementById("msg2").value;
+            var patt2=/^[1][3,4,5,7,8][0-9]{9}$/;
+            var bluree2=patt2.test(msg2);
+            if(bluree2==false){
+                msg21.innerHTML = '输入有误！';
+                document.getElementById("msg21").style.color="red";
+                e2=false;
+            }else if(bluree2==true){
+                msg21.innerHTML = '输入合法！';
+                document.getElementById("msg21").style.color="green";
+                e2=true;
+            }
+            return e2;
+         }
+         function bluree3(){
+            var msg3 = document.getElementById("msg3").value;
+            var patt3=/^[0-9]{4}$/;
+            var bluree3=patt3.test(msg3);
+            if(bluree3==false){
+                msg31.innerHTML = '区号有误！';
+                document.getElementById("msg31").style.color="red";
+                e3=false;
+            }else if(bluree3==true){
+                msg31.innerHTML = '区号合法！';
+                document.getElementById("msg31").style.color="green";
+                e3=true;
+            }
+            return e3;
+           }
+        function bluree4(){
+        	var msg4 = document.getElementById("msg4").value;
+            var patt4=/^[0-9]{8}$/;
+            var bluree4=patt4.test(msg4);
+            if(bluree4==false){
+                msg41.innerHTML = '电话号码有误！';
+                document.getElementById("msg41").style.color="red";
+                e4=false;
+            }else if(bluree4==true){
+                msg41.innerHTML = '电话号码合法！';
+                document.getElementById("msg41").style.color="green";
+                e4=true;
+            }
+            return e4;
+        }
+        function bluree5(){
+        	var msg5 = document.getElementById("msg5").value;
+            var patt5=/^[0-9]{4}/;
+            var bluree5=patt5.test(msg5);
+            if(bluree5==false){
+                msg51.innerHTML = '分机有误！';
+                document.getElementById("msg51").style.color="red";
+                e5=false;
+            }else if(bluree5==true){
+                msg51.innerHTML = '分机合法！';
+                document.getElementById("msg51").style.color="green";
+                e5=true;
+            }
+            return e5;
+        }
+        function bluree6(){
+            var msg6 = document.getElementById("msg6").value;
+            var patt6=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/;
+            var bluree6=patt6.test(msg6);
+            if(bluree6==false){
+                msg61.innerHTML = '输入有误！';
+                document.getElementById("msg61").style.color="red";
+                e6=false;
+            }else if(bluree6==true){
+                msg61.innerHTML = '输入合法！';
+                document.getElementById("msg61").style.color="green";
+                e6=true;
+            }
+            return e6;
+        }
+        function bluree7(){
+            var msg7 = document.getElementById("msg7").value;
+            var patt7=/^[0-9]{4}$/;
+            var bluree7=patt7.test(msg7);
+            if(bluree7==false){
+                msg71.innerHTML = '区号有误！';
+                document.getElementById("msg71").style.color="red";
+                e7=false;
+            }else if(bluree7==true){
+                msg71.innerHTML = '区号合法！';
+                document.getElementById("msg71").style.color="green";
+                e7=true;
+            }
+            return e7;
+           }
+        function bluree8(){
+        	var msg8 = document.getElementById("msg8").value;
+            var patt8=/^[0-9]{8}$/;
+            var bluree8=patt8.test(msg8);
+            if(bluree8==false){
+                msg81.innerHTML = '电话号码有误！';
+                document.getElementById("msg81").style.color="red";
+                e8=false;
+            }else if(bluree8==true){
+                msg81.innerHTML = '电话号码合法！';
+                document.getElementById("msg81").style.color="green";
+                e8=true;
+            }
+            return e8;
+        }
+        function bluree9(){
+        	var msg9 = document.getElementById("msg9").value;
+            var patt9=/^[0-9]{4}/;
+            var bluree9=patt9.test(msg9);
+            if(bluree9==false){
+                msg91.innerHTML = '分机有误！';
+                document.getElementById("msg91").style.color="red";
+                e9=false;
+            }else if(bluree9==true){
+                msg91.innerHTML = '分机合法！';
+                document.getElementById("msg91").style.color="green";
+                e9=true;
+            }
+            return e9;
+        }
+        function tijiao(){
+            if(e1==true&&(e2==true&&e3==true&&e4==true&&e5==true&&e6==true&&e7==true&&e8==true&&e9==true)){
+                    alert("购买成功，感谢您的购买！");
+                }else
+                {
+                    alert("对不起，由于您的填写错误未能购买！");
+                }
+               }
+		var zhong36=document.getElementById('zhong36');
+		var zengjia=document.getElementById('zengjia');
+		zengjia.onclick=zi1;
+		function zi1(){
+			if (zhong36.style.display=="none") {
+				zhong36.style.display="block";
+			}else{
+				zhong36.style.display=="none";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="big">
+	 <div id="nav">
+		<div id="nav1"></div>
+		<div id="nav2">
+		今天是2019年12月12日☀晴22℃~16℃
+		</div>
+		<div id="nav3"><input type="button" value="登录" style="background-color:#FF6633">
+			&nbsp;|&nbsp;免费注册&nbsp;|&nbsp;手机客户端下载&nbsp;|&nbsp;设为首页&nbsp;|&nbsp;加入收藏夹
+	 	</div>
+	 </div>
+	 <div style="width:1200px; height:63px; background: #00CCFF;" id="biaoti">
+	 	<p>&emsp;&emsp;&nbsp;联盟.机票</p>
+	 </div>
+	 <div id="body">
+	 	<div id="bian"></div>
+	 	<div id="zhong">
+	 		<div id="zhong1"><br>&emsp;机票预订</div>
+	 		<div id="zhong2"><hr></div>
+	 		<div id="zhong3">
+	 			<div id="zhong31" style="width:790px; height:48px;background:url(1.jpg);"></div>
+	 			<div id="zhong32">&emsp;|&nbsp;航班信息</div>
+	 			<div id="zhong33"><br><img src="2.jpg" width="45px" height="33px" style="float:left;">
+	 			<p>南方航空&emsp;CZ3892&emsp;&emsp;<span>[修改航班]&emsp;&nbsp;[退&nbsp;改&nbsp;签]</span>&emsp;&emsp;2019年12月12日&emsp;10:05&emsp;广州白云国际机场 -- 起飞&emsp;&emsp;&emsp;&emsp;￥2200/成人</p>
+	 			<p>机型&emsp;738&emsp;<span>经停&emsp;&emsp;&emsp;[修改舱位]</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;2019年12月12日&emsp;11:03&emsp;揭阳潮汕国际机场 -- 到达&emsp;&emsp;&emsp;&emsp;&emsp;（含税费）</p></div>
+	 			<hr><span style="font-size: 13px">&emsp;总价：￥2200（含税费）&emsp;&emsp;人数：1人</span>&emsp;&emsp;<span style="font-size: 13px;color: blue">机票明细</span>
+	 			<div id="zhong32">&emsp;|&nbsp;乘客信息<span>&emsp;&emsp; 请准确填写乘客信息(姓名、证件号码)，以免在办理登机手续时发生问题。</span></div>
+	 			<div id="zhong34"><span style="font-size: 13px">&emsp;&emsp;在常用姓名中搜索</span>&nbsp;<input type="text" style="width: 170px" placeholder="请输入姓名"></div>
+	 			<div id="zhong35"><span style="font-size: 13px">&emsp;<input type="checkbox">&emsp;刘某某&emsp;<input type="checkbox">&emsp;张某某&emsp;&emsp;<input type="checkbox">&emsp;王某某&emsp;&emsp;<input type="checkbox">&emsp;李某某&emsp;&emsp;&emsp;&emsp;|</span><span style="font-size: 13px;color: blue">更多👇</span></div>
+	 			<div id="zhong36" style="display: block;"><span style="font-size: 13px">&emsp;🚹第一位乘机人:刘某某
+	 				<div id="zhong361"><input type="checkbox">&nbsp;保存常用姓名&emsp;<input type="button" value="❌"></div></span><hr>
+	 				<div id="zhong362">
+	 					<span style="font-size: 13px"><br>&emsp;&emsp;*购票类型：<select style="width: 200px"><option>成人票</option><option>学生票</option></select>&emsp;￥2200（含税费）&emsp;<span style="font-size: 13px;color: blue">退改签</span><br><br>&emsp;&emsp;*姓&emsp;&emsp;名：<input type="text" style="width: 195px"><span style="font-size: 13px;color: blue">&emsp;填写说明</span><br><br>&emsp;&emsp;*证件类型：<select style="width: 200px"><option>护照</option></select><br><br>&emsp;&emsp;*证件号码：<input type="text" style="width: 195px" maxlength="18"><span style="font-size: 13px;"></span>
+	 					</span>
+	 				</div>
+	 			</div>
+	 			<div id="zhong36" style="display: block;"><span style="font-size: 13px">&emsp;🚹第二位乘机人:王某某
+	 				<div id="zhong361"><input type="checkbox">&nbsp;保存常用姓名&emsp;<input type="button" value="❌"></div></span><hr>
+	 				<div id="zhong362">
+	 					<span style="font-size: 13px"><br>&emsp;&emsp;*购票类型：<select style="width: 200px"><option>成人票</option><option>学生票</option></select>&emsp;￥2200（含税费）&emsp;<span style="font-size: 13px;color: blue">退改签</span><br><br>&emsp;&emsp;*姓&emsp;&emsp;名：<input type="text" style="width: 195px"><span style="font-size: 13px;color: blue">&emsp;填写说明</span><br><br>&emsp;&emsp;*证件类型：<select style="width: 200px"><option>护照</option></select><br><br>&emsp;&emsp;*证件号码：<input type="text" style="width: 195px">
+	 					</span>
+	 				</div>
+	 			</div>
+	 			<div id="zhong36" style="display: none;"><span style="font-size: 13px">&emsp;🚹第三位乘机人:<input type="text">
+	 				<div id="zhong361"><input type="checkbox">&nbsp;保存常用姓名&emsp;<input type="button" value="❌"></div></span><hr>
+	 				<div id="zhong362">
+	 					<span style="font-size: 13px"><br>&emsp;&emsp;*购票类型：<select style="width: 200px"><option>成人票</option><option>学生票</option></select>&emsp;￥2200（含税费）&emsp;<span style="font-size: 13px;color: blue">退改签</span><br><br>&emsp;&emsp;*姓&emsp;&emsp;名：<input type="text" style="width: 195px"><span style="font-size: 13px;color: blue">&emsp;填写说明</span><br><br>&emsp;&emsp;*证件类型：<select style="width: 200px"><option>护照</option></select><br><br>&emsp;&emsp;*证件号码：<input type="text" style="width: 195px">
+	 					</span>
+	 				</div>
+	 			</div>
+	 			<div id="zhong37"><input type="button" value="🚹增加乘客" id="zengjia"></div>
+	 			<div id="zhong32">&emsp;|&nbsp;联系人信息<span>&emsp;&emsp;请您准确填写联系人信息(联系人、手机号码、E-mail)，以便我们与您联系。</span></div>
+	 			<div id="zhong38"><span style="font-size: 13px">*联&nbsp;&nbsp;系&nbsp;&nbsp;人：<input type="text" style="width: 180px" id="msg1" onblur="bluree1(this)"><span id="msg11"></span><br><br>*手机号码：<input type="text" style="width:180px" id="msg2" onblur="bluree2()"><span id="msg21"></span><br><br>&nbsp;&nbsp;联系电话：<input type="text" style="width: 45px" placeholder="区号" id="msg3" onblur="bluree3()">&nbsp;<input type="text" style="width: 75px" placeholder="电话号码" id="msg4" onblur="bluree4()">&nbsp;<input type="text" style="width: 45px" placeholder="分机" id="msg5" onblur="bluree5()"><span id="msg31"></span><span id="msg41"></span><span id="msg51"></span><br><br>&nbsp;&nbsp;传真号码：<input type="text" style="width: 45px" placeholder="区号" id="msg7" onblur="bluree7()">&nbsp;<input type="text" style="width: 75px" placeholder="电话号码" id="msg8" onblur="bluree8()">&nbsp;<input type="text" style="width: 45px" placeholder="分机" id="msg9" onblur="bluree9()"><span id="msg71"></span><span id="msg81"></span><span id="msg91"></span><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail：<input type="text" style="width:180px" id="msg6" onblur="bluree6()"><span id="msg61"></span><br><br>&nbsp;&nbsp;联系地址：<input type="text" style="width:180px"></span></div>
+	 			<div id="zhong39"><input type="button" value="上一步" style="width:70px;height: 25px">&emsp;&emsp;&emsp;&emsp;<input type="button" value="下一步" style="width:70px;height:25px;background-color: #FF6633;" onclick="tijiao()"></div>
+	 		</div>
+	 		<div id="zhong5">
+	 			<div id="zhong51"><span style="font-family: 宋体;"><p style="font-size: 15px">新手指南</p><hr><p style="font-size: 12px">预订步骤</p><p style="font-size: 12px">订单查询</p></span></div>
+	 			<div id="zhong51"><span style="font-family: 宋体;"><p style="font-size: 15px">支付方式</p><hr><p style="font-size: 12px">在线支付</p><p style="font-size: 12px">开通财付通</p></span></div>
+	 			<div id="zhong51"><span style="font-family: 宋体;"><p style="font-size: 15px">品质服务</p><hr><p style="font-size: 12px">退改签说明</p><p style="font-size: 12px">行程单配送方式</p><p style="font-size: 12px">航空意外险</p></span></div>
+	 			<div id="zhong51"><span style="font-family: 宋体;"><p style="font-size: 15px;">帮助信息</p><hr><p style="font-size: 12px">免费邮寄行程单/保险发票</p></span></div>
+	 		</div>
+	 		<div id="zhong6">
+    		<span style="font-size:13px;">关于我们&nbsp;|&nbsp;联系我们&nbsp;|&nbsp;用户协议&nbsp;|&nbsp;帮助信息</span><br>
+    		<span style="font-size:13px;">Copyright2012&nbsp;商家联盟&nbsp;版权所有&nbsp;辽ICP备09013204号-2</span>
+			</div>
+	 	</div>
+	 	<div id="bian"></div>
+	 </div>
+	</div>
+</body>
+</html>
